@@ -6,15 +6,22 @@ public class Solution {
 
         String line = sc.nextLine().trim();
         String[] words = line.split("\\s+");
-
         TreeMap<String, Integer> map = new TreeMap<>();
 
         for (String word : words) {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        for (String key : map.keySet()) {
-            System.out.println(key +": "+ map.get(key));
+        StringBuilder sb = new StringBuilder();
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            sb.append(entry.getKey())
+              .append(": ")
+              .append(entry.getValue())
+              .append("\n");
         }
+
+        // Remove last newline (important)
+        System.out.print(sb.toString().trim());
     }
 }
