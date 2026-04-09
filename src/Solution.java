@@ -1,6 +1,8 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.ArrayList;     
+import java.util.Collections;  
 
 public class Solution {
     public static void main(String[] args) {
@@ -15,8 +17,11 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        ArrayList<String> keys = new ArrayList<>(map.keySet());
+        Collections.sort(keys);
+
+        for (String key : keys) {
+            System.out.println(key + ": " + map.get(key));
         }
     }
 }
