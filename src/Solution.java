@@ -13,8 +13,13 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
+        StringBuilder sb = new StringBuilder();
+
         for (String key : map.keySet()) {
-            System.out.println(key + ": " + map.get(key));
+            sb.append(key).append(": ").append(map.get(key)).append(" ");
         }
+
+        // Remove trailing space
+        System.out.print(sb.toString().trim());
     }
 }
