@@ -13,8 +13,8 @@ public class Solution {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
 
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        for (String key : map.keySet()) {
+            System.out.println(key + ": " + map.get(key));
         }
     }
 }
